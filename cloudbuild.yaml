@@ -1,0 +1,9 @@
+substitutions:
+  DOCKER_IMAGE: $_REGION-docker.pkg.dev/ownfitness/public/emulator
+
+steps:
+  - name: 'gcr.io/cloud-builders/docker'
+    entrypoint: bash
+    args: [ 'build', '-t', 'europe-west2-docker.pkg.dev/ownfitness/public/', '.' ]
+
+images: [$DOCKER_IMAGE]
