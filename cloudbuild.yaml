@@ -1,8 +1,8 @@
 substitutions:
-  DOCKER_IMAGE: $LOCATION-docker.pkg.dev/ownfitness/public/firebase-emulator:$TAG_NAME
+  _DOCKER_IMAGE: $LOCATION-docker.pkg.dev/ownfitness/public/firebase-emulator:$TAG_NAME
 
 steps:
   - name: 'gcr.io/cloud-builders/docker'
-    args: [ 'build', '-t', $DOCKER_IMAGE, '.'  ]
+    args: [ 'build', '-t', '${_DOCKER_IMAGE}', '.'  ]
 
-images: [ $DOCKER_IMAGE ]
+images: [ '${_DOCKER_IMAGE}' ]
