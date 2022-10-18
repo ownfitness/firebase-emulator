@@ -2,7 +2,7 @@ FROM node:17-alpine3.14
 
 ARG FIREBASE_VERSION
 
-RUN apk --no-cache add openjdk8-jre bash curl openssl gettext nano nginx sudo python3
+RUN apk --no-cache add openjdk11-jre bash curl openssl gettext nano nginx sudo python3
 
 RUN mkdir -p /run/nginx
 RUN sudo npm cache clean --force
